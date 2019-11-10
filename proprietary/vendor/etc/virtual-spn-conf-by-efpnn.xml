@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:xliff="urn:oasis:names:tc:xliff:document:1.2">
+    <add-resource name="virtual-spn-conf-by-efpnn" type="array"/>
+    <string-array name="virtual-spn-conf-by-efpnn">
+        <item>2623=Ortel D=Ortel D</item>
+        <item>23430=EE=EE</item>
+        <item>2081=Free=ORANGE F</item>
+        <item>2143=Happy=Happy</item>
+        <item>2143=MASMOVIL=MASMOVIL</item>
+        <item>2143=MASMovil=MASMovil</item>
+        <item>2143=JAZZTEL=JAZZTEL</item>
+        <item>2143=Jazztel=Jazztel</item>
+        <item>2143=Republica Movil=Republica Movil</item>
+        <item>2143=mobilR=mobilR</item>
+        <item>2143=EUSKALTEL=EUSKALTEL</item>
+        <item>2143=simyo=simyo</item>
+        <item>2143=Carrefour=Carrefour</item>
+        <item>2143=amena=amena</item>
+        <item>2143=CABLE movil=CABLE movil</item>
+        <item>2143=Ibercom=Ibercom</item>
+        <item>2143=MovilDIA=MovilDIA</item>
+        <item>2143=LCR=LCR</item>
+        <item>2143=LlamaYA=LlamaYA</item>
+        <item>2143=YOU Mobile=YOU Mobile</item>
+        <item>2143=IOS=IOS</item>
+        <item>2144=MASMOVIL=MASMOVIL</item>
+        <item>2144=Pepephone=Pepephone</item>
+        <item>2147=telecable=telecable</item>
+        <item>2147=Tuenti=Tuenti</item>
+        <item>2147=pepephone=pepephone</item>
+        <item>2141=Eroski Movil=Eroski Movil</item>
+        <item>2141=Lowi=Lowi</item>
+        <item>2141=Hits=Hits</item>
+        <item>23212=Ge org!=Ge org!</item>
+        <item>23212=yesss!=yesss!</item>
+        <item>2327=HoT=HoT</item>
+        <item>2327=AllianzSIM=AllianzSIM</item>
+        <item>2321=Red Bull Mobile=Red Bull Mobile</item>
+        <item>2321=Red Bull MOBILE=Red Bull MOBILE</item>
+        <item>23211=bob=bob</item>
+        <item>23210=MediaMarkt=MediaMarkt</item>
+        <item>23210=SATURNmobil=SATURNmobil</item>
+        <item>2327=RAPID=RAPID</item>
+        <item>2327=Allianz SIM=Allianz SIM</item>
+        <item>23210=eety=eety</item>
+        <item>2327=LiwestMobil=LiwestMobil</item>
+        <item>23218=simpli=simpli</item>
+        <item>23213=UPC AT=UPC AT</item>
+    </string-array>
+</resources>

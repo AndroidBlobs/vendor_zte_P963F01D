@@ -1,0 +1,52 @@
+on post-fs
+    insmod /vendor/lib/modules/silead_fp.ko
+
+on post-fs-data
+#add for silead fingerprint
+    chmod 0666 /dev/silead_fp
+    chown system system /dev/silead_fp
+    mkdir /data/system/silead 0770 system system
+    mkdir /data/vendor/silead 0770 system system
+
+service fpexts_hal /vendor/bin/hw/vendor.silead.hardware.fingerprintext@1.0-service
+    class late_start
+    user system
+    group system input
+    disabled
+
+service silead_factory /vendor/bin/silead_factory
+    class late_start
+    user system
+    group system
+    oneshot
+    disabled
+
+#on property:vendor.silead.fp.ext.enable=1
+    start fpexts_hal
+
+service fps_hal /vendor/bin/hw/android.hardware.biometrics.fingerprint@2.1-service
+    # "class hal" causes a race condition on some devices due to files created
+    # in /data. As a workaround, postpone startup until later in boot once
+    # /data is mounted.
+    class late_start
+    user system
+    group system input
+    disabled
+
+#on property:vendor.fingerprint.id=silead
+    start fpexts_hal
+    start fps_hal
+
+#on property:debug.synafp.test-start=1
+#   start silead_factory
+
+#on property:debug.synafp.test-start=0
+#   stop silead_factory
+
+on property:vendor.fingerprint.test-start=1 && property:vendor.fingerprint.id=silead
+    stop vendor.fps_hal
+    start silead_factory
+
+on property:vendor.fingerprint.test-start=0 && property:vendor.fingerprint.id=silead
+    stop silead_factory
+    start vendor.fps_hal

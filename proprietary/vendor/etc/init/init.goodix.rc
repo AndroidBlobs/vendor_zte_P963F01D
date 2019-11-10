@@ -1,0 +1,21 @@
+on post-fs
+    insmod /vendor/lib/modules/goodix_fp.ko
+
+on post-fs-data
+#add for goodix fingerprint
+    chmod 660 /dev/goodix_fp
+    chown system system /dev/goodix_fp
+
+#pv for Emode test
+service gf_pv_test /vendor/bin/gf_pv_test
+    class late_start
+    user system
+    group system
+    oneshot
+    disabled
+
+on property:vendor.fingerprint.test-start=1 && property:vendor.fingerprint.id=gf3658
+    start gf_pv_test
+
+on property:vendor.fingerprint.test-start=0 && property:vendor.fingerprint.id=gf3658
+    #stop gf_pv_test
